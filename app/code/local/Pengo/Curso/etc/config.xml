@@ -10,6 +10,12 @@
             <curso>
                 <class>Pengo_Curso_Model</class>
             </curso>
+        <!-- Sobreescribir la venta para edicion de correo -->
+            <sales>
+                <rewrite>
+                    <order>Pengo_Curso_Model_Sales_Model_Order</order>
+                </rewrite>
+            </sales>
         </models>
     </global>
     <frontend>
