@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Pengo_Curso>
+            <version>1.0.0</version>
+        </Pengo_Curso>
+    </modules>
+    <global>
+        <models>
+            <curso>
+                <class>Pengo_Curso_Model</class>
+            </curso>
+        </models>
+    </global>
+    <frontend>
+        <routers>
+            <curso>
+                <use>standard</use>
+                <args>
+                    <module>Pengo_Curso</module>
+                    <frontName>curso</frontName>
+                </args>
+            </curso>
+        </routers>
+        <events>
+        <!--Obervar cuando se va a dibujar una pagina estática, para ver si es es el home y hacer una redirección -->
+            <controller_action_predispatch_cms>
+                <observers>
+                    <redireccionar>
+                        <type>singleton</type>
+                        <class>Pengo_Curso_Model_Observer</class>
+                        <method>redireccionar</method>
+                    </redireccionar>
+                </observers>
+            </controller_action_predispatch_cms>
+        </events>
+    </frontend>
+</config>
