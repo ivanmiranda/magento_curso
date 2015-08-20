@@ -21,6 +21,13 @@
                     <frontName>curso</frontName>
                 </args>
             </curso>
+            <customer>
+                <args>
+                    <modules>
+                        <Pengo_Curso before="Mage_Customer">Pengo_Curso_Customer</Pengo_Curso>
+                    </modules>
+                </args>
+            </customer>
         </routers>
         <events>
         <!--Obervar cuando se va a dibujar una pagina estática, para ver si es es el home y hacer una redirección -->
