@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Pengo_Auth>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Pengo_Auth>
+	</modules>
+</config>

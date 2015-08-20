@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+	<auth_index_index>
+		<reference name="root">
+			<action method="setTemplate">
+				<template>page/1column.phtml</template>
+			</action>
+		</reference>
+		<reference name="content">   
+			<block type="auth/index" name="auth_index" template="pengo/auth/form.phtml"/>
+		</reference>
+	</auth_index_index>
+	<auth_index_qr>
+		<reference name="root">
+			<action method="setTemplate">
+				<template>page/1column.phtml</template>
+			</action>
+		</reference>
+		<reference name="content">   
+			<block type="auth/index" name="auth_index" template="pengo/auth/qr.phtml"/>
+		</reference>
+	</auth_index_qr>
+</layout>

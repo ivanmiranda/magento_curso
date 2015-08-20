@@ -1,0 +1,33 @@
+<div id="qr"></div>
+<div id="auth">
+	<label id="respuesta"></label><br>
+	<input type="text" name="codigoauth" placeholder="codigo de seguridad" autocomplete="off">
+	<br><br>
+	<button onclick="validar()">Comprobar</button>
+	<button onclick="mostrarQR()">Sincronizar</button>
+</div>
+<script type="text/javascript">
+
+function validar() {
+	new Ajax.Request('<?= Mage::helper('core/url')->getCurrentUrl() ?>/index/validar', {
+		method: 'post',
+		parameters: {codigoauth: $$('[name="codigoauth"]')[0].value},
+		onComplete: function(resp){ 
+			if(!resp.responseText.evalJSON().respuesta) {
+				$('respuesta').update('Código no válido')
+			} else {
+				$('auth').hide()
+			}
+		}
+	})
+}
+
+function mostrarQR() {
+	new Ajax.Request('<?= Mage::helper('core/url')->getCurrentUrl() ?>/index/qrAjax', {
+		method: 'get',
+		onComplete: function(resp){ 
+			$('qr').update('<p>Lee el siguiente código para sincronizar la aplicación</p><img src=\''+resp.responseText.evalJSON().respuesta+'\'>')
+		}
+	})
+}
+</script>
