@@ -13,6 +13,15 @@
         </models>
     </global>
     <frontend>
+        <routers>
+            <curso>
+                <use>standard</use>
+                <args>
+                    <module>Pengo_Curso</module>
+                    <frontName>curso</frontName>
+                </args>
+            </curso>
+        </routers>
         <events>
         <!--Obervar cuando se va a dibujar una pagina estática, para ver si es es el home y hacer una redirección -->
             <controller_action_predispatch_cms>
